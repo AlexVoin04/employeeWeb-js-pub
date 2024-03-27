@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  <title>Расположение столов</title>
+  <script src="https://cdn.tailwindcss.com/?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="icon" href="images/Icon.svg" type="image/svg+xml">
+  <style>
+    .table {
+      width: 100px;
+      height: 100px;
+      background-color: #63462D;
+      border: 2px solid #d1d5db;
+      border-radius: 10px;
+      position: absolute;
+      cursor: pointer;
+    }
+    /* Увеличиваем максимальную ширину и высоту */
+    .w-custom {
+      width: 960px; /* Измените значение по вашему усмотрению */
+    }
+    .max-h-custom {
+      max-height: 480px; /* Измените значение по вашему усмотрению */
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-800 relative overflow-x-auto w-full">
+  <div class="p-4">
+    <h1 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-400">Расположение столов</h1>
+    <div id="editAreaDiv" class="flex">
+      <div class="w-48 min-w-48">
+        <div class="w-custom flex items-center rounded-tl-lg h-12 ps-2 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+          <h1 class="font-semibold text-gray-900 dark:text-white">Столы</h3>
+        </div>
+        <ul id="tableList" class="h-96 overflow-y-auto text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-bl-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+          <!-- <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+            <div class="flex items-center ps-3 pt-2 pb-2">
+              <input id="vue-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              <div class="ms-2">
+                <label for="vue-checkbox" class="w-full py-3 text-sm font-medium text-gray-900 dark:text-gray-300">Стол: <span class="ms-1">1</span></label>
+                <p id="helper-checkbox-text" class="text-xs font-normal text-gray-500 dark:text-gray-300">Количество мест:<span class="ms-1">2</span></p>
+              </div>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+      <!-- Область для зала (справа) -->
+      <div id="hall" class="flex-grow">
+        <div class="w-custom flex items-center justify-between rounded-tr-lg h-12 ps-2 pe-2 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+          <h1 class="font-semibold text-gray-900 dark:text-white">Зал ресторана</h1>
+          <div>
+            <input type="checkbox" id="edit-checkbox" value="" class="hidden peer" disabled>
+            <label for="edit-checkbox" class="inline-flex items-center justify-between w-full p-0.5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+                <div class="block">
+                  <svg class="w-7 h-7" aria-hidden="true" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <defs><style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#231f20;}</style></defs><title>edit</title><g id="Layer_2" data-name="Layer 2"><g id="edit"><g id="edit-2" data-name="edit"><rect class="cls-1" width="24" height="24"/><path class="cls-2" d="M19.4,7.34h0L16.66,4.6A2,2,0,0,0,14,4.53l-9,9a2,2,0,0,0-.57,1.21L4,18.91a1,1,0,0,0,.29.8A1,1,0,0,0,5,20h.09l4.17-.38a2,2,0,0,0,1.21-.57l9-9A1.92,1.92,0,0,0,19.4,7.34ZM9.08,17.62l-3,.28.27-3L12,9.32l2.7,2.7ZM16,10.68,13.32,8,15.27,6,18,8.73Z"/></g></g></g>
+                   </svg>
+                </div>
+            </label>
+          </div>
+        </div>
+        <div id="hall-floor" class="relative h-96 bg-gray-200 border border-gray-300 w-custom me-4 pointer-events-none">
+          <!-- Tables will be added here -->
+          <div id="loading_div" role="status" class="absolute inset-0 flex items-center justify-center" style="display: none;"> 
+            <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+    
+  </div>
+
+  
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script type="module" src="tableLocation.js"></script>
+</body>
+</html>
