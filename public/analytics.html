@@ -78,10 +78,10 @@
                         <a href="#" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Заказы</a>
                       </li>
                       <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Блюда</a>
+                        <a href="dishes.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Блюда</a>
                       </li>
                       <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Меню</a>
+                        <a href="menu.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Меню</a>
                       </li>
                     
                 </div>
@@ -110,12 +110,15 @@
                     <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Еще что-то</button>
                 </li>
                 <li role="presentation">
-                    <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="years-dishes-tab" data-tabs-target="#years-dishes" type="button" role="tab" aria-controls="years-dishes" aria-selected="false">Продукты за год</button>
+                    <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="years-dishes-tab" data-tabs-target="#years-dishes" type="button" role="tab" aria-controls="years-dishes" aria-selected="false">Блюда за год</button>
+                </li>
+                <li role="presentation">
+                    <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="months-dishes-tab" data-tabs-target="#months-dishes" type="button" role="tab" aria-controls="months-dishes" aria-selected="false">Блюда за месяц</button>
                 </li>
             </ul>
         </div>
         <div id="default-tab-content" class="p-2">
-            <div class="hidden w-full bg-white rounded-lg shadow dark:bg-gray-800 p-2 md:p-4" id="years-sales" role="tabpanel" aria-labelledby="years-sales-tab">
+            <div class="hidden w-full bg-slate-300 rounded-lg shadow dark:bg-gray-800 p-2 md:p-4" id="years-sales" role="tabpanel" aria-labelledby="years-sales-tab">
               <div class="flex justify-between">
                 <div>
                   <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2"><span id="total-cost-span">0</span><span> ₽</span></h5>
@@ -166,7 +169,7 @@
                 </div>
               </div>
             </div>
-            <div class="hidden w-full bg-white rounded-lg shadow dark:bg-gray-800 p-2 md:p-4" id="month-sales" role="tabpanel" aria-labelledby="month-sales-tab">
+            <div class="hidden w-full bg-slate-300 rounded-lg shadow dark:bg-gray-800 p-2 md:p-4" id="month-sales" role="tabpanel" aria-labelledby="month-sales-tab">
               <div class="flex justify-between">
                 <div>
                   <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2"><span id="total-sales-month-span">0</span><span> ₽</span></h5>
@@ -242,14 +245,14 @@
                 </div>
               </div>
             </div>
-            <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+            <div class="hidden p-4 rounded-lg bg-slate-300 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                 <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
             </div>
-            <div class="hidden w-full bg-white rounded-lg shadow dark:bg-gray-800 p-2 md:p-4" id="years-dishes" role="tabpanel" aria-labelledby="years-dishes-tab">
+            <div class="hidden w-full bg-slate-300 rounded-lg shadow dark:bg-gray-800 p-2 md:p-4" id="years-dishes" role="tabpanel" aria-labelledby="years-dishes-tab">
               <div class="flex justify-between">
                 <div>
                   <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2"><span id="total-quantity-years-dishes-span">0</span><span> шт.</span></h5>
-                  <p class="text-base font-normal text-gray-500 dark:text-gray-400">Продукты за год</p>
+                  <p class="text-base font-normal text-gray-500 dark:text-gray-400">Блюда за год</p>
                 </div>
                 <div
                   class="flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500 dark:text-green-500 text-center">
@@ -289,6 +292,82 @@
                         
                       </ul>
                   </div>
+                  <a
+                    href="#"
+                    class="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 dark:hover:text-blue-500  hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2">
+                    Больше
+                    <svg class="w-2.5 h-2.5 ms-1.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="hidden w-full bg-slate-300 rounded-lg shadow dark:bg-gray-800 p-2 md:p-4" id="months-dishes" role="tabpanel" aria-labelledby="months-dishes-tab">
+              <div class="flex justify-between">
+                <div>
+                  <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2"><span id="total-months-dishes-span">0</span><span> шт.</span></h5>
+                  <p class="text-base font-normal text-gray-500 dark:text-gray-400">Блюда за месяц</p>
+                </div>
+                <div
+                  class="flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500 dark:text-green-500 text-center">
+                  12%
+                  <svg class="w-3 h-3 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13V1m0 0L1 5m4-4 4 4"/>
+                  </svg>
+                </div>
+              </div>
+              <div id="area-chart-months-dishes"></div>
+              <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+                <div class="flex justify-between items-center pt-5">
+                  <!-- Button -->
+                  <div class="flex">
+                    <button
+                      id="year-months-dishes-Button"
+                      data-dropdown-placement="bottom"
+                      class="me-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white"
+                      type="button">
+                      <span id="year-months-dishes-span">-</span>
+                      <svg class="w-2.5 m-2.5 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                      </svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div id="year-months-dishes-dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul id="years-months-dishes-ul" class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                          <!-- <li class="hover:cursor-pointer">
+                            <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <input id="filter-radio-seats-" type="radio" value="1" name="filter-radio-seats" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 hover:cursor-pointer">
+                                <label for="filter-radio-seats-" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300 hover:cursor-pointer">2024</label>
+                            </div>
+                          </li> -->
+                          
+                        </ul>
+                    </div>
+                    <button
+                      id="month-months-dishes-Button"
+                      data-dropdown-placement="bottom"
+                      class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white"
+                      type="button">
+                      <span id="month-months-dishes-span">-</span>
+                      <svg class="w-2.5 m-2.5 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                      </svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div id="month-months-dishes-dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul id="months-months-dishes-ul" class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                          <!-- <li class="hover:cursor-pointer">
+                            <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <input id="filter-radio-seats-" type="radio" value="1" name="filter-radio-seats" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 hover:cursor-pointer">
+                                <label for="filter-radio-seats-" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300 hover:cursor-pointer">2024</label>
+                            </div>
+                          </li> -->
+                          
+                        </ul>
+                    </div>
+                  </div>
+                  
                   <a
                     href="#"
                     class="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 dark:hover:text-blue-500  hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2">

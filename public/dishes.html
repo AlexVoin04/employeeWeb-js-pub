@@ -9,7 +9,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script> -->
         <link rel="icon" href="images/Icon.svg" type="image/svg+xml"> 
-        <title>Сотрудники</title> 
+        <title>Блюда</title> 
         <style>
           /* Увеличиваем максимальную ширину и высоту */
           .w-custom {
@@ -73,7 +73,7 @@
               <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                   <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                     <li>
-                      <a href="employees.html" class="block px-4 py-2 text-blue-500" aria-current="page">Сотрудники</a>
+                      <a href="employees.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white" aria-current="page">Сотрудники</a>
                     </li>
                     <li>
                       <a href="tables.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Столы</a>
@@ -82,7 +82,7 @@
                       <a href="#" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Заказы</a>
                     </li>
                     <li>
-                      <a href="dishes.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Блюда</a>
+                      <a href="dishes.html" class="block px-4 py-2 text-blue-500">Блюда</a>
                     </li>
                     <li>
                       <a href="menu.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Меню</a>
@@ -121,13 +121,13 @@
                   <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                   </svg>
-                  <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Сотрудники</span>
+                  <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Блюда</span>
                 </div>
               </li>
             </ol>
         </nav>
-          <a href="employeeAdd.html">
-            <button id="addEmployeeButton" type="button" class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Добавить сотрудника</button>
+          <a href="dishAdd.html">
+            <button id="addEmployeeButton" type="button" class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Добавить блюдо</button>
           </a>
       </div>
 
@@ -158,19 +158,19 @@
           </div>
 
           <div class="ms-1">
-            <button id="positionsDropdownRadioButton" class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
-                <span id="positionsSpan">Все должности</span>  
+            <button id="typesDropdownRadioButton" class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+                <span id="typesSpan">Все типы</span>  
                 <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
             </button>
             <!-- Dropdown menu -->
-            <div id="positionsDropdownRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
-                <ul id="positionsUl" class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioButton">
+            <div id="typesDropdownRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
+                <ul id="typesUl" class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioButton">
                   <li>
                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 hover:cursor-pointer">
                         <input id="filter-radio-all" checked type="radio" value="0" name="filter-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 hover:cursor-pointer">
-                        <label for="filter-radio-all" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300 hover:cursor-pointer">Все должности</label>
+                        <label for="filter-radio-all" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300 hover:cursor-pointer">Все типы</label>
                     </div>
                   </li>   
                 </ul>
@@ -179,12 +179,12 @@
         </div>
         
         
-        <label for="user_search" class="sr-only">Поиск</label>
+        <label for="dish_search" class="sr-only">Поиск</label>
         <div class="relative w-full max-w-80">
             <div class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center ps-3 pointer-events-none">
                 <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
             </div>
-            <input type="text" id="user_search" class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full max-w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Поиск">
+            <input type="text" id="dish_search" class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full max-w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Поиск">
         </div>
       </div>
       <div class="ms-2 me-2 relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -198,60 +198,31 @@
                         </div>
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        ФИО
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        email
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Номер телефона
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Должность
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Дата рождения
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Пол
+                        Наименование
                     </th>
                     <th scope="col" class="px-6 py-3 text-center">
-                        Учетные данные
+                        Стоимость
                     </th>
-                    <!-- <th scope="col" class="px-6 py-3">
-                        Активности
-                    </th> -->
+                    <th scope="col" class="px-6 py-3 text-center">
+                        Скидка
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Тип блюда
+                    </th>
+                    <th scope="col" class="px-3 py-3 text-center">
+                        Вес
+                    </th>
                 </tr>
             </thead>
             <tbody>
-                
+
             </tbody>
         </table>
       </div>
       <nav class="flex items-center flex-column flex-wrap md:flex-row justify-between ms-2 me-2 mt-1" aria-label="Table navigation">
         <span id="pagination-info-span" class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto"></span>
         <ul id="pagin-ul" class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8 overflow-x-auto">
-            <!-- <li>
-                <button id="previous-btn" class="hover:cursor-pointer flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</button>
-            </li>
-            <li>
-                <button class="hover:cursor-pointer flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</button>
-            </li>
-            <li>
-                <button class="hover:cursor-pointer flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</button>
-            </li>
-            <li>
-                <button class="hover:cursor-pointer flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-            </li>
-            <li>
-                <button class="hover:cursor-pointer flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</button>
-            </li>
-            <li>
-                <button class="hover:cursor-pointer flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</button>
-            </li>
-            <li>
-                <button id="next-btn" class="hover:cursor-pointer flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</button>
-            </li> -->
+
         </ul>
       </nav>
 
@@ -313,5 +284,5 @@
       
     </main>
     </body>
-    <script type="module" src="employees.js"></script>
+    <script type="module" src="dishes.js"></script>
 </html>

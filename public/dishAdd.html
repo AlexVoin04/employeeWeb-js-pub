@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.turbo.min.js"></script>
+        <script src="https://cdn.tailwindcss.com/?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+        <link rel="icon" href="images/Icon.svg" type="image/svg+xml">
+        <title>Добавление  блюда</title>
+    </head>
+
+    <body class="bg-white dark:bg-gray-800">
+        
+    <header>
+      <nav class="bg-gray-900 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="images/Icon.svg" class="h-8" alt="Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap text-white dark:text-white">Mosaic Flawors</span>
+        </a>
+        <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-600 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+              <span class="sr-only">Open user menu</span>
+              <img class="w-8 h-8 rounded-full" src="images/ic_user.svg" alt="user photo">
+            </button>
+            <!-- Dropdown menu -->
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+              <div class="px-4 py-3">
+                <span id="userName" class="block text-sm text-gray-900 dark:text-white"></span>
+                <span id="userLogin" class="block text-sm  text-gray-500 truncate dark:text-gray-400"></span>
+              </div>
+              <ul class="py-2" aria-labelledby="user-menu-button">
+                <li>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                </li>
+                <li>
+                  <a id="signOut" href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Выход</a>
+                </li>
+              </ul>
+            </div>
+            <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+          </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+          <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg bg-gray-800 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+              <a href="index.html" class="block py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Главная</a>
+            </li>
+            <li>
+              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-500 md:p-0 md:dark:text-blue-500">Администрирование <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg></button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                  <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                    <li>
+                      <a href="employees.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Сотрудники</a>
+                    </li>
+                    <li>
+                      <a href="tables.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Столы</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Заказы</a>
+                    </li>
+                    <li>
+                      <a href="dishes.html" class="block px-4 py-2 text-blue-500" aria-current="page">Блюда</a>
+                    </li>
+                    <li>
+                      <a href="menu.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Меню</a>
+                    </li>
+                  
+              </div>
+            </li>
+            <li>
+              <a href="analytics.html" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Аналитика</a>
+            </li>
+            <li>
+              <a href="cooksConsole.html" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Консоль повара</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content">
+      <div class="mt-1 ms-3 me-3 flex flex-column sm:flex-row flex-wrap items-center justify-between pb-1 border-b">
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="flex-column flex-wrap inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+              <li class="inline-flex items-center">
+                <a class="inline-flex items-center text-sm font-medium text-gray-700 dark:text-gray-400 ">
+                  <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <g>
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path d="M12 14v8H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm9 4h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z"/>
+                    </g>
+                  </svg>
+                  Администрирование
+                </a>
+              </li>
+              <li>
+                <div class="flex items-center">
+                  <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                  </svg>
+                  <a href="dishes.html" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Блюда</a>
+                </div>
+              </li>
+              <li aria-current="page">
+                <div class="flex items-center">
+                  <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                  </svg>
+                  <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Добавление блюда</span>
+                </div>
+              </li>
+            </ol>
+          </nav>
+          <button id="add-dish-btn" type="button" class="px-3 py-2 inline-flex text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <svg class="me-1 -ms-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+            Добавить
+          </button>
+        </div>
+
+        <form class="mt-5">
+          <div class="max-w-6xl grid md:grid-cols-2">
+            <div class="max-w-xl m-2">
+              <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="name_input" id="name_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required autocomplete="off"/>
+                    <label for="name_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Наименование</label>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="abbreviatedName_input" id="abbreviatedName_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required autocomplete="off"/>
+                    <label for="abbreviatedName_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Краткое наименование</label>
+                </div>
+              </div>
+    
+              <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                  <input type="number" name="cost_input" id="cost_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required autocomplete="off"/>
+                  <label for="cost_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Стоимость</label>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                  <input type="number" name="discount_input" id="discount_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required autocomplete="off"/>
+                  <label for="discount_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Скидка</label>
+                </div>
+              </div>
+    
+              <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                  <label for="type_select" class="block text-sm font-medium text-gray-900 dark:text-white">Тип</label>
+                  <select id="type_select" class="block py-2 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                      <option selected disabled hidden value="0">Выберите тип</option>  
+                      
+                  </select>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                  <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Изображение</label>
+                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" accept="image/jpeg, image/png">
+                  <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">JPEG or PNG.</p>
+                </div>
+              </div>
+    
+              <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group mt-6 flex">
+                    <input type="number" name="weight_input" id="weight_input" class="me-1 block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required autocomplete="off"/>
+                    <label for="weight_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Вес</label>
+                    <!-- <button id="calculate_weight_btn" type="button" class="px-1 justify-center py-1 inline-flex text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.25,21h9.5c1.378,0,2.5-1.122,2.5-2.5v-13c0-1.378-1.122-2.5-2.5-2.5h-9.5c-1.378,0-2.5,1.122-2.5,2.5v13  C4.75,19.878,5.872,21,7.25,21z M5.75,5.5c0-0.827,0.673-1.5,1.5-1.5h9.5c0.827,0,1.5,0.673,1.5,1.5v13c0,0.827-0.673,1.5-1.5,1.5  h-9.5c-0.827,0-1.5-0.673-1.5-1.5V5.5z"/><path d="M8.406,9.313h7.188c0.844,0,1.531-0.687,1.531-1.531V6.469c0-0.844-0.687-1.531-1.531-1.531H8.406  c-0.844,0-1.531,0.687-1.531,1.531v1.313C6.875,8.625,7.562,9.313,8.406,9.313z M7.875,6.469c0-0.293,0.238-0.531,0.531-0.531h7.188  c0.293,0,0.531,0.238,0.531,0.531v1.313c0,0.293-0.238,0.531-0.531,0.531H8.406c-0.293,0-0.531-0.238-0.531-0.531V6.469z"/><path d="M7.875,13.598h0.629c0.551,0,1-0.449,1-1v-0.327c0-0.551-0.449-1-1-1H7.875c-0.551,0-1,0.449-1,1v0.327  C6.875,13.149,7.324,13.598,7.875,13.598z M8.505,12.598l0,0.5L8.505,12.598L8.505,12.598z M7.875,12.271h0.629l0,0.327H7.875  V12.271z"/><path d="M7.875,16.195h0.629c0.551,0,1-0.449,1-1v-0.327c0-0.551-0.449-1-1-1H7.875c-0.551,0-1,0.449-1,1v0.327  C6.875,15.746,7.324,16.195,7.875,16.195z M8.505,15.195l0,0.5L8.505,15.195L8.505,15.195z M7.875,14.868h0.629l0,0.327H7.875  V14.868z"/><path d="M7.875,18.792h0.629c0.551,0,1-0.449,1-1v-0.327c0-0.551-0.449-1-1-1H7.875c-0.551,0-1,0.449-1,1v0.327  C6.875,18.343,7.324,18.792,7.875,18.792z M8.505,17.792l0,0.5L8.505,17.792L8.505,17.792z M7.875,17.464h0.629l0,0.327H7.875  V17.464z"/><path d="M12.314,11.271h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C13.314,11.72,12.866,11.271,12.314,11.271z M12.314,12.598h-0.628v-0.327h0.629L12.314,12.598z M12.314,13.098v-0.5h0  L12.314,13.098z"/><path d="M12.314,13.868h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C13.314,14.316,12.866,13.868,12.314,13.868z M12.314,15.695v-0.5h-0.629v-0.327h0.629v0.327c0,0,0,0,0.001,0L12.314,15.695z"/><path d="M12.314,16.464h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C13.314,16.913,12.866,16.464,12.314,16.464z M12.314,18.292v-0.5h-0.629v-0.327h0.629v0.327c0,0,0,0,0.001,0L12.314,18.292z"/><path d="M16.125,11.271h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C17.125,11.72,16.676,11.271,16.125,11.271z M16.125,12.598h-0.629v-0.327h0.629L16.125,12.598z M16.125,13.098v-0.5h0  L16.125,13.098z"/><path d="M16.125,13.868h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C17.125,14.316,16.676,13.868,16.125,13.868z M16.125,15.695v-0.5h-0.629v-0.327h0.629v0.327c0,0,0,0,0.001,0L16.125,15.695z"/><path d="M16.125,16.464h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C17.125,16.913,16.676,16.464,16.125,16.464z M16.125,18.292v-0.5h-0.629v-0.327h0.629v0.327c0,0,0,0,0.001,0L16.125,18.292z"/></svg>
+                    </button> -->
+                  </div>
+                <div class="relative z-0 w-full mb-5 group">
+                  <label for="unit_select" class="block text-sm font-medium text-gray-900 dark:text-white">Ед. измерения</label>
+                  <select id="unit_select" class="block py-2 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                      <option selected disabled hidden value="0">Выберите ед. измерения</option>  
+                      
+                  </select>
+                </div>
+              </div>
+    
+    
+              <div id="messge_div" class="mt-5 flex items-center p-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert" style="display: none;">
+                <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                </svg>
+                <span class="sr-only">Info</span>
+                <div>
+                  <span class="font-medium">Ошибка!</span> 
+                  <span id="message_span"></span>
+                </div>
+              </div>
+            </div>
+            <div class="m-2 p-1 max-w-xl border border-gray-300 bg-gray-100 rounded-lg dark:bg-gray-700 dark:border-gray-600">
+              <div class="mb-2 flex items-center justify-between">
+                <label class="me-1 block text-sm font-medium text-gray-900 dark:text-white">Состав</label> 
+                <button id="product-modal-btn" type="button" class="px-1 justify-center py-1 inline-flex text-xs font-medium text-center text-white bg-blue-700 rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                </button>   
+              </div>
+              
+              <ul id="compositions-list" class="h-96 overflow-y-auto text-sm text-gray-700 dark:text-gray-200">
+
+              </ul>             
+            </div>
+          </div>
+        </form>
+
+        <div id="product-add-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <div id="auth_div" class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-300">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        Добавить продукт
+                    </h3>
+                    <button id="close-product-add-modal-btn" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <form class="p-4 md:p-5">
+                    <div class="grid gap-4 mb-4 grid-cols-2">
+                        <div class="col-span-2">
+                          <div class="justify-between items-center flex flex-col sm:flex-row rounded-lg border dark:border-gray-600 border-gray-300 p-2 mb-2">
+                            <div class="relative z-0 w-full group my-2 me-0 sm:me-2">
+                              <input type="text" name="product_input" id="product_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                              <label for="product_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Название блюда</label>
+                            </div>
+                            <button id="add-new-product-btn" type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Добавить</button>
+                          </div>
+                          <div class="relative w-full ">
+                              <div class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center ps-3 pointer-events-none">
+                                  <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                              </div>
+                              <label for="product_search" class="sr-only">Поиск</label>
+                              <input type="text" id="product_search" class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Поиск">
+                          </div>
+                        </div>
+                        <div id="product_message_div" class="col-span-2 flex items-center p-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert" style="display: none;">
+                          <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                          </svg>
+                          <span class="sr-only">Info</span>
+                          <div>
+                            <span class="font-medium">Ошибка!</span> 
+                            <span id="product_messgae_span"></span>
+                          </div>
+                        </div>
+                        <div class="col-span-2 ">
+                          <ul id="product-list" class="h-96 overflow-y-auto text-sm text-gray-700 dark:text-gray-200">
+                            
+                          </ul>
+                          
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+            </div>
+            
+        </div>
+      </div> 
+
+    </main>
+    <div id="loading_div" role="status" class="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2" style="display: none;">
+      <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
+      <span class="sr-only">Loading...</span>
+    </div>
+
+    </body>
+    <script type="module" src="dishAdd.js"></script>
+</html>
