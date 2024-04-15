@@ -10,13 +10,13 @@
         <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
         <link rel="icon" href="images/Icon.svg" type="image/svg+xml"> 
-        <title>Столы</title> 
+        <title>Заказы</title> 
         <style>
           .min-h-table {
-            max-height: 686px; /* Измените значение по вашему усмотрению */
+            max-height: 686px; 
           }
           .max-w-nav {
-            max-width: 686px; /* Измените значение по вашему усмотрению */
+            max-width: 686px;
           }
         </style>
     </head>
@@ -124,18 +124,20 @@
                   <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                   </svg>
-                  <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Столы</span>
+                  <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Заказы</span>
                 </div>
               </li>
             </ol>
         </nav>
-          <a href="tableLocation.html">
-            <button id="addEmployeeButton" type="button" class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Расположение</button>
-          </a>
+        <button type="button" class="px-2 py-2 text-xs font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-300 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+            <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+            </svg>
+        </button>
       </div>
 
       <div class="ms-2 me-2 mt-5 flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-1">
-        <div class="flex flex-column sm:flex-row flex-wrap">
+        <!-- <div class="flex flex-column sm:flex-row flex-wrap">
           <div>
             <button id="seatsDropdownRadioButton" class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
                 <span id="seatsSpan">Все</span>  
@@ -144,7 +146,7 @@
                 </svg>
             </button>
 
-            <!-- Dropdown menu -->
+
             <div id="seatsDropdownRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
                 <ul id="seatsUl" class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="seatsDropdownRadioButton">
                     <li>
@@ -165,7 +167,7 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
             </button>
-            <!-- Dropdown menu -->
+
             <div id="statusDropdownRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
                 <ul id="statusUl" class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="statusDropdownRadioButton">
                   <li>
@@ -176,11 +178,11 @@
                   </li>   
                 </ul>
               </div>
-           </div>
+           </div> -->
            <!-- Modal toggle -->
-          <button id="add-modal-btn" data-modal-target="add-modal" class="mb-1 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+          <!-- <button id="add-modal-btn" data-modal-target="add-modal" class="mb-1 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
             Добавить стол
-          </button>
+          </button> -->
 
           <!-- Main modal -->
           <div id="add-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -253,21 +255,20 @@
                         </div>
                     </th>
                     <th scope="col" class="px-3 py-3 text-center">
-                        Номер
+                        Идентификатор
                     </th>
                     <th scope="col" class="px-3 py-3 text-center">
-                        Количество мест
+                        Стоимость
                     </th>
                     <th scope="col" class="px-3 py-3 text-center">
-                        Статус
+                        Стол
                     </th>
                     <th scope="col" class="px-3 py-3 text-center">
-                        Статус вызова
+                      Время
                     </th>
-                    <th scope="col" class="px-3 py-3 text-center">
-                        Расположение
+                    <th scope="col" class="px-6 py-3 text-center ">
+                      Готовность
                     </th>
-
                 </tr>
             </thead>
             <tbody>
@@ -280,30 +281,10 @@
       <nav class="max-w-nav flex items-center flex-column flex-wrap md:flex-row justify-between ms-2 me-2 mt-1" aria-label="Table navigation">
         <span id="pagination-info-span" class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto"></span>
         <ul id="pagin-ul" class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8 overflow-x-auto">
-            <!-- <li>
-                <button id="previous-btn" class="hover:cursor-pointer flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</button>
-            </li>
-            <li>
-                <button class="hover:cursor-pointer flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</button>
-            </li>
-            <li>
-                <button class="hover:cursor-pointer flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</button>
-            </li>
-            <li>
-                <button class="hover:cursor-pointer flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-            </li>
-            <li>
-                <button class="hover:cursor-pointer flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</button>
-            </li>
-            <li>
-                <button class="hover:cursor-pointer flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</button>
-            </li>
-            <li>
-                <button id="next-btn" class="hover:cursor-pointer flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</button>
-            </li> -->
+            
         </ul>
       </nav>
     </main>
     </body>
-    <script type="module" src="tables.js"></script>
+    <script type="module" src="orders.js"></script>
 </html>

@@ -11,7 +11,7 @@
         <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
         <link rel="icon" href="images/Icon.svg" type="image/svg+xml">
-        <title>Добавление  блюда</title>
+        <title>Блюдо</title>
     </head>
 
     <body class="bg-white dark:bg-gray-800">
@@ -117,7 +117,7 @@
                   <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                   </svg>
-                  <a href="dishes.html" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Блюда</a>
+                  <a href="orders.html" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Заказы</a>
                 </div>
               </li>
               <li aria-current="page">
@@ -125,72 +125,53 @@
                   <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                   </svg>
-                  <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Добавление блюда</span>
+                  <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Заказ</span>
                 </div>
               </li>
             </ol>
           </nav>
-          <button id="add-dish-btn" type="button" class="px-3 py-2 inline-flex text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            <svg class="me-1 -ms-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-            Добавить
-          </button>
+          <div class="flex items-center">
+            <button id="reload-btn" type="button" class="px-2 py-2 text-xs font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-300 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 12">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" d="M10 4c-.8-1.1-2-2.5-4.1-2.5-2.5 0-4.4 2-4.4 4.5s2 4.5 4.4 4.5c1.3 0 2.5-.6 3.3-1.5m1.3-7.5V4c0 .3-.2.5-.5.5H7.5"/>
+              </svg>
+            </button>
+            <button id="change_fields_btn" type="button" class="px-3 py-2 inline-flex text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Сохранить
+            </button>
+          </div>
         </div>
 
-        <form class="mt-5">
+        <form class="mt-3">
           <div class="max-w-6xl grid md:grid-cols-2">
             <div class="max-w-xl m-2">
               <div class="grid md:grid-cols-2 md:gap-6">
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="name_input" id="name_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required autocomplete="off"/>
-                    <label for="name_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Наименование</label>
-                </div>
-                <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="abbreviatedName_input" id="abbreviatedName_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required autocomplete="off"/>
-                    <label for="abbreviatedName_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Краткое наименование</label>
-                </div>
-              </div>
-    
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 w-full mb-5 group">
-                  <input type="number" name="cost_input" id="cost_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required autocomplete="off"/>
-                  <label for="cost_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Стоимость</label>
-                </div>
-                <div class="relative z-0 w-full mb-5 group">
-                  <input type="number" name="discount_input" id="discount_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required autocomplete="off"/>
-                  <label for="discount_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Скидка</label>
-                </div>
-              </div>
-    
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 w-full mb-5 group">
-                  <label for="type_select" class="block text-sm font-medium text-gray-900 dark:text-white">Тип</label>
-                  <select id="type_select" class="block py-2 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                      <option selected disabled hidden value="0">Выберите тип</option>  
-                      
-                  </select>
-                </div>
-                <div class="relative z-0 w-full mb-5 group">
-                  <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Изображение</label>
-                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" accept="image/jpeg, image/png">
-                  <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">JPEG or PNG.</p>
-                </div>
-              </div>
-    
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 w-full mb-5 group mt-6 flex">
-                    <input type="number" name="weight_input" id="weight_input" class="me-1 block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required autocomplete="off"/>
-                    <label for="weight_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Вес</label>
-                    <!-- <button id="calculate_weight_btn" type="button" class="px-1 justify-center py-1 inline-flex text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.25,21h9.5c1.378,0,2.5-1.122,2.5-2.5v-13c0-1.378-1.122-2.5-2.5-2.5h-9.5c-1.378,0-2.5,1.122-2.5,2.5v13  C4.75,19.878,5.872,21,7.25,21z M5.75,5.5c0-0.827,0.673-1.5,1.5-1.5h9.5c0.827,0,1.5,0.673,1.5,1.5v13c0,0.827-0.673,1.5-1.5,1.5  h-9.5c-0.827,0-1.5-0.673-1.5-1.5V5.5z"/><path d="M8.406,9.313h7.188c0.844,0,1.531-0.687,1.531-1.531V6.469c0-0.844-0.687-1.531-1.531-1.531H8.406  c-0.844,0-1.531,0.687-1.531,1.531v1.313C6.875,8.625,7.562,9.313,8.406,9.313z M7.875,6.469c0-0.293,0.238-0.531,0.531-0.531h7.188  c0.293,0,0.531,0.238,0.531,0.531v1.313c0,0.293-0.238,0.531-0.531,0.531H8.406c-0.293,0-0.531-0.238-0.531-0.531V6.469z"/><path d="M7.875,13.598h0.629c0.551,0,1-0.449,1-1v-0.327c0-0.551-0.449-1-1-1H7.875c-0.551,0-1,0.449-1,1v0.327  C6.875,13.149,7.324,13.598,7.875,13.598z M8.505,12.598l0,0.5L8.505,12.598L8.505,12.598z M7.875,12.271h0.629l0,0.327H7.875  V12.271z"/><path d="M7.875,16.195h0.629c0.551,0,1-0.449,1-1v-0.327c0-0.551-0.449-1-1-1H7.875c-0.551,0-1,0.449-1,1v0.327  C6.875,15.746,7.324,16.195,7.875,16.195z M8.505,15.195l0,0.5L8.505,15.195L8.505,15.195z M7.875,14.868h0.629l0,0.327H7.875  V14.868z"/><path d="M7.875,18.792h0.629c0.551,0,1-0.449,1-1v-0.327c0-0.551-0.449-1-1-1H7.875c-0.551,0-1,0.449-1,1v0.327  C6.875,18.343,7.324,18.792,7.875,18.792z M8.505,17.792l0,0.5L8.505,17.792L8.505,17.792z M7.875,17.464h0.629l0,0.327H7.875  V17.464z"/><path d="M12.314,11.271h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C13.314,11.72,12.866,11.271,12.314,11.271z M12.314,12.598h-0.628v-0.327h0.629L12.314,12.598z M12.314,13.098v-0.5h0  L12.314,13.098z"/><path d="M12.314,13.868h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C13.314,14.316,12.866,13.868,12.314,13.868z M12.314,15.695v-0.5h-0.629v-0.327h0.629v0.327c0,0,0,0,0.001,0L12.314,15.695z"/><path d="M12.314,16.464h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C13.314,16.913,12.866,16.464,12.314,16.464z M12.314,18.292v-0.5h-0.629v-0.327h0.629v0.327c0,0,0,0,0.001,0L12.314,18.292z"/><path d="M16.125,11.271h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C17.125,11.72,16.676,11.271,16.125,11.271z M16.125,12.598h-0.629v-0.327h0.629L16.125,12.598z M16.125,13.098v-0.5h0  L16.125,13.098z"/><path d="M16.125,13.868h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C17.125,14.316,16.676,13.868,16.125,13.868z M16.125,15.695v-0.5h-0.629v-0.327h0.629v0.327c0,0,0,0,0.001,0L16.125,15.695z"/><path d="M16.125,16.464h-0.629c-0.551,0-1,0.449-1,1v0.327c0,0.551,0.449,1,1,1h0.629c0.551,0,1-0.449,1-1v-0.327  C17.125,16.913,16.676,16.464,16.125,16.464z M16.125,18.292v-0.5h-0.629v-0.327h0.629v0.327c0,0,0,0,0.001,0L16.125,18.292z"/></svg>
-                    </button> -->
+                    <label for="id_input" class="block mb-px text-sm font-medium text-gray-900 dark:text-white">Идентификатор</label>
+                    <input type="text" id="id_input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" disabled readonly/>
                   </div>
                 <div class="relative z-0 w-full mb-5 group">
-                  <label for="unit_select" class="block text-sm font-medium text-gray-900 dark:text-white">Ед. измерения</label>
-                  <select id="unit_select" class="block py-2 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                      <option selected disabled hidden value="0">Выберите ед. измерения</option>  
-                      
+                    <label for="cost_input" class="block mb-px text-sm font-medium text-gray-900 dark:text-white">Стоимость</label>
+                    <input type="number" id="cost_input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+                  </div>
+              </div>
+    
+              <div class="grid md:grid-cols-1 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                  <label for="comment" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Комментарий</label>
+                  <textarea id="comment" rows="4" class="max-h-32 min-h-16 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Комментарий..."></textarea>
+                </div>
+                
+              </div>
+    
+              <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                  <label for="table_select" class="block mb-px text-sm font-medium text-gray-900 dark:text-white">Стол</label>
+                  <select id="table_select" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected disabled hidden value="0">Выберите стол</option>  
                   </select>
                 </div>
+                
               </div>
     
     
@@ -214,7 +195,57 @@
               </div>
               
               <ul id="compositions-list" class="h-96 overflow-y-auto text-sm text-gray-700 dark:text-gray-200">
-
+                <li class="mt-1">
+                  <div class=" p-1 rounded bg-gray-400 dark:bg-gray-500">
+                    <div class="flex">
+                      <input type="text" id="disabled-input-2" aria-label="disabled input 2" class="me-1 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Блюдо" disabled readonly>
+                      <button id="delete-product-btn" type="button" class="px-2.5 justify-center py-2.5 inline-flex text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 98 137" xmlns="http://www.w3.org/2000/svg"><path d="M75.6,44.8v73c0,3.4-2.8,6.2-6.2,6.2H21.3c-3.4,0-6.2-2.8-6.2-6.2v-73H75.6L75.6,44.8z M59.9,52.9v62.8h3.6V52.9H59.9  L59.9,52.9z M43.6,52.9v62.8h3.6V52.9H43.6L43.6,52.9z M27.3,52.9v62.8h3.6V52.9H27.3L27.3,52.9z M31.3,27.9v-5.2  c0-3.3,2.6-5.9,5.9-5.9h16.4c3.3,0,5.9,2.6,5.9,5.9v5.2h18.1c3.4,0,6.2,2.8,6.2,6.2v4.3H7V34c0-3.4,2.8-6.2,6.2-6.2H31.3L31.3,27.9z   M37.2,20.8c-1,0-1.8,0.8-1.8,1.8v5.2h20.1v-5.2c0-1-0.8-1.8-1.8-1.8H37.2L37.2,20.8z"/></svg>
+                      </button>  
+                    </div>
+                    <div class="grid md:grid-cols-2 md:gap-6">
+                      <div class="relative z-0 w-full mb-1 group mt-4">
+                          <input type="number" name="quantity_input" id="quantity_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                          <label for="quantity_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Количество</label>
+                      </div>
+                      <div class="relative z-0 w-full mb-1 group mt-4">
+                        <input type="number" name="cost_dish_input" id="cost_dish_input" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="cost_dish_input" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Цена</label>
+                      </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 md:gap-6">
+                      <div class="relative z-0 w-full mb-2 group mt-2">
+                        <div class="relative max-w-sm">
+                          <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                            </svg>
+                          </div>
+                          <input datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                        </div>    
+                      </div>
+                      <div class="relative z-0 w-full mb-2 group mt-2">
+                        <div class="relative">
+                          <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+                              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                  <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                              </svg>
+                          </div>
+                          <input type="time" id="time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="09:00" max="18:00" value="00:00" required />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 md:gap-6 mb-2">
+                      <div class="relative z-0 w-full group">
+                        <label for="status_dish_select" class="block text-sm font-medium text-gray-900 dark:text-white">Статус</label>
+                        <select id="status_dish_select" class="block py-2 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                            <option selected disabled hidden value="0">Выберите статус</option>  
+                            
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </li>
               </ul>             
             </div>
           </div>
@@ -278,6 +309,71 @@
         </div>
       </div> 
 
+      <div id="image-add-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div id="image_div" class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-300">
+                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                      Изменить изображение
+                  </h3>
+                  <button id="close-image-add-modal-btn" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>
+              <form class="py-2 md:p-5">
+                  <div class="grid gap-4 mb-4 grid-cols-2">
+                      <div class="col-span-2 py-2 border-b dark:border-gray-600 border-gray-300">
+                        <h5 class="text-base text-center mb-1 font-semibold text-gray-900 dark:text-white">
+                          Изображения в облаке
+                        </h3>
+                        <div class="flex-wrap flex justify-center max-h-80 overflow-y-auto" id="imagesList">
+                        
+                          
+                        </div>
+                        
+                      </div>
+  
+                      <div class="col-span-2 px-4 pb-2 border-b dark:border-gray-600 border-gray-300">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Загрузить изображение</label>
+                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" accept="image/jpeg, image/png">
+                        <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">JPEG or PNG.</p>
+                      
+                      </div>
+                      
+                      <div id="image_message_div" class="col-span-2 flex items-center p-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert" style="display: none;">
+                        <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                        </svg>
+                        <span class="sr-only">Info</span>
+                        <div>
+                          <span class="font-medium">Ошибка!</span> 
+                          <span id="image_messgae_span"></span>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="grid md:grid-cols-2 md:gap-6 px-4">
+                    <button id="add_download_image_btn" type="button" class="justify-center mb-4 text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      Добавить картинку в облако
+                    </button>
+                    <button id="add_image_from_cloud_btn" type="button" class="mb-4 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                      Добавить выбранную картинку к блюду
+                    </button>
+                  </div>
+                  
+              </form>
+          </div>
+          </div>
+          <div id="image_loading_div" role="status" class="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2" style="display: none;">
+            <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
+            <span class="sr-only">Loading...</span>
+          </div>
+      </div>
+      </div>
+
     </main>
     <div id="loading_div" role="status" class="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2" style="display: none;">
       <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
@@ -285,5 +381,5 @@
     </div>
 
     </body>
-    <script type="module" src="dishAdd.js"></script>
+    <!-- <script type="module" src="dish.js"></script> -->
 </html>
