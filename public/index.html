@@ -33,15 +33,6 @@
                 </div>
                 <ul class="py-2" aria-labelledby="user-menu-button">
                   <li>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
-                  </li>
-                  <li>
                     <a id="signOut" href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Выход</a>
                   </li>
                 </ul>
@@ -81,6 +72,9 @@
                         <a href="menu.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Меню</a>
                       </li>
                       <li>
+                        <a href="checks.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Чеки</a>
+                      </li>
+                      <li>
                         <a href="other.html" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Другое</a>
                       </li>
                     </ul>
@@ -97,7 +91,107 @@
           </div>
         </nav>
       </header>
-
+      <main>
+        <section class="bg-white dark:bg-gray-800">
+          <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+              <div class="max-w-screen-md mb-8 lg:mb-16">
+                  <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Система для ресторанного бизнеса</h2>
+                  <p class="text-gray-500 sm:text-xl dark:text-gray-400">Позволяет оптимизировать и улучшить работу вашего ресторана.</p>
+              </div>
+              <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+                  <div>
+                      <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-blue-900">
+                          <svg class="w-5 h-5 text-blue-600 lg:w-6 lg:h-6 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                      </div>
+                      <h3 class="mb-2 text-xl font-bold dark:text-white">Аналитика</h3>
+                      <p class="text-gray-500 dark:text-gray-400">Предоставляет статистику продаж по годам или месяцам.</p>
+                  </div>
+                  <div>
+                      <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-blue-900">
+                          <svg class="w-5 h-5 text-blue-600 lg:w-6 lg:h-6 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path></svg>                    
+                      </div>
+                      <h3 class="mb-2 text-xl font-bold dark:text-white">Автоматизация бизнеса</h3>
+                      <p class="text-gray-500 dark:text-gray-400">Позволяет клиентам самстоятельно оформлять заказы без участия официанта.</p>
+                  </div>
+                  <div>
+                      <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-blue-900">
+                          <svg class="w-5 h-5 text-blue-600 lg:w-6 lg:h-6 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
+                      </div>
+                      <h3 class="mb-2 text-xl font-bold dark:text-white">Операции</h3>
+                      <p class="text-gray-500 dark:text-gray-400">Поддерживает интерес у сотрудников с помощью удобных рабочих процессов.</p>
+                  </div>
+              </div>
+          </div>
+        </section>
+        <section class="bg-white dark:bg-gray-800">
+              <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                <div class="relative mx-auto border-gray-900 dark:border-gray-900 bg-gray-900 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+                  <div class="h-[32px] w-[3px] bg-gray-900 dark:bg-gray-900 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+                  <div class="h-[46px] w-[3px] bg-gray-900 dark:bg-gray-900 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+                  <div class="h-[46px] w-[3px] bg-gray-900 dark:bg-gray-900 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+                  <div class="h-[64px] w-[3px] bg-gray-900 dark:bg-gray-900 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+                  <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900">
+                      <img src="images/light.png" class="dark:hidden w-[272px] h-[572px]" alt="">
+                      <img src="images/dark.png" class="hidden dark:block w-[272px] h-[572px]" alt="">
+                  </div>
+              </div>
+              <div class="mt-4 md:mt-0">
+                  <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Мобильное приложение для сотрудников обслуживающего персонала.</h2>
+                  <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Помогает быстро и удобно взаимодействовать с текущими заказами и статусами столов.</p>
+                  <!-- <a href="#" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+                    Скачать
+                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  </a> -->
+              </div>
+          </div>
+        </section>
+        <section class="bg-white dark:bg-gray-800">
+          <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+            <div class="mt-4 md:mt-0">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Мобильное приложение для клиентов.</h2>
+                <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Предоставляет клиентам возможность самостоятельно оформлять заказы и формировать пречеки.</p>
+                <!-- <a href="#" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+                  Скачать
+                  <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a> -->
+            </div>
+            <div class="relative mx-auto border-gray-900 dark:border-gray-900 bg-gray-900 border-[14px] rounded-[2.5rem] h-[341px] max-w-[454px] md:h-[410px] md:max-w-[682px]">
+              <div class="h-[32px] w-[3px] bg-gray-900 dark:bg-gray-900 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+              <div class="h-[46px] w-[3px] bg-gray-900 dark:bg-gray-900 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+              <div class="h-[46px] w-[3px] bg-gray-900 dark:bg-gray-900 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+              <div class="h-[64px] w-[3px] bg-gray-900 dark:bg-gray-900 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+              <div class="rounded-[2rem] overflow-hidden h-[310px] md:h-[380px] bg-white dark:bg-gray-900">
+                  <img src="images/light-client.jpeg" class="dark:hidden h-[310px] md:h-[380px]" alt="">
+                  <img src="images/dark-client.jpeg" class="hidden dark:block h-[310px] md:h-[380px]" alt="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="bg-white dark:bg-gray-800">
+          <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+            <div>
+              <div class="relative mx-auto border-gray-900 dark:border-gray-900 bg-gray-900 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+                <div class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-gray-900 dark:bg-gray-900">
+                    <img src="images/light-web.png" class="dark:hidden h-[156px] md:h-[278px] w-full rounded-xl" alt="">
+                    <img src="images/dark-web.png" class="hidden dark:block h-[156px] md:h-[278px] w-full rounded-lg" alt="">
+                </div>
+              </div>
+              <div class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+                <div class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-900"></div>
+              </div>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Веб-приложение для сотрудников.</h2>
+              <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Предоставляет администрирование и аналитику данных.</p>
+              <!-- <a href="#" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+                Скачать
+                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </a> -->
+            </div>
+          </div>
+        </section>
+        
+      </main>
     
     
     </body>
